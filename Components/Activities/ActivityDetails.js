@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
       },
     container: { flex: 1, justifyContent: 'flex-start', backgroundColor:"rgb(27,29,37)"},
     row: {
-        margin: 5,
+        margin: 6,
         padding: 5,
         flexDirection: 'row',
     },
