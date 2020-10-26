@@ -15,7 +15,7 @@ import EntypoIcon from "react-native-vector-icons/Entypo";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import EvilIconsIcon from "react-native-vector-icons/EvilIcons";
 
-export default class AddUser extends React.Component {
+export default class CreatUser extends React.Component {
   state = {
     name:"",
     email: "",
