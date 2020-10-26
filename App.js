@@ -30,7 +30,8 @@ const StackNavigator = createStackNavigator(
     ProfileScreen: { screen: Profile },
     Createuser: {screen: Createuser},
     Login: {screen: Login},
-    Timeline: {screen:HomePage}
+    Timeline: {screen:HomePage},
+    Sports: {screen:Sports}
   },
   { initialRouteKey: "Activity List" }
 );
