@@ -16,7 +16,12 @@ import Channels from "./Components/Activities/Channels";
 import Login from "./Components/Login/Login";
 import Createuser from "./Components/Login/CreateUser";
 import Timeline from "./Components/Activities/Timeline";
-import Sports from "./Components/Activities/Categories/Sports"
+import Sports from "./Components/Activities/Categories/Sports";
+import Food from "./Components/Activities/Categories/Food";
+import Academics from "./Components/Activities/Categories/Academics";
+import Action from "./Components/Activities/Categories/Action";
+import Language from "./Components/Activities/Categories/Language";
+import Handcraft from "./Components/Activities/Categories/Handcraft"
 import { createDrawerNavigator } from "react-navigation-drawer";
 import Calendar from "./Components/Modal/Calendar";
 import HomePage from "./Components/HomePage";
@@ -28,39 +33,45 @@ const StackNavigator = createStackNavigator(
     EditActivity: { screen: EditActivity },
     Channels: { screen: Channels },
     ProfileScreen: { screen: Profile },
-    Createuser: {screen: Createuser},
-    Login: {screen: Login},
-    Timeline: {screen:HomePage},
-    Sports: {screen:Sports}
+    Createuser: { screen: Createuser },
+    Login: { screen: Login },
+    Timeline: { screen: HomePage },
+    Sports: { screen: Sports },
+    Food: { screen: Food },
+    Academics: { screen: Academics },
+    Action: { screen: Action },
+    Handcraft: { screen: Handcraft },
+    Language: { screen: Language },
+
   },
   { initialRouteKey: "Activity List" }
 );
 
 const MyDrawerNavigator = createDrawerNavigator({
-    Main: {
-        screen: StackNavigator,
-    },
-    Categories: {
-        screen: Channels
-    },
-    ProfileScreen: {
-        screen: ProfileScreen
-    },
-    Timeline: {
-        screen: HomePage
-    },
-    Adduser: {
-        screen: Createuser
-    },
-    Login: {
-        screen: Login
-    },
-    Sports: {
-        screen: Sports
-    },
-    Calendar: {
-      screen: Calendar
-    },
+  Main: {
+    screen: StackNavigator,
+  },
+  Categories: {
+    screen: Channels
+  },
+  ProfileScreen: {
+    screen: ProfileScreen
+  },
+  Timeline: {
+    screen: HomePage
+  },
+  Adduser: {
+    screen: Createuser
+  },
+  Login: {
+    screen: Login
+  },
+  Sports: {
+    screen: Sports
+  },
+  Calendar: {
+    screen: Calendar
+  },
 })
 const AppNav = createAppContainer(MyDrawerNavigator)
 
@@ -153,7 +164,8 @@ export default class App extends React.Component {
     }
   }
   render() {
-      return (<AppNav/>)
-            
+    return (<AppNav />)
+
+
   }
 }

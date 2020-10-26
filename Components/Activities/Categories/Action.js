@@ -6,11 +6,14 @@ import {
   SafeAreaView,
   ImageBackground,
   StyleSheet,
+  Dimensions
 } from 'react-native';
 import _ from 'lodash';
 import HeaderX from "../HeaderX";
+import Modal from "../../Modal/Calendar";
 
-import Carousel from 'react-native-snap-carousel';
+
+import Carousel, { ParallaxImage } from 'react-native-snap-carousel';
 
 export default class Action extends React.Component {
 
@@ -24,47 +27,60 @@ export default class Action extends React.Component {
           title: "F2 lessons",
           text: "Former professional offering lessons in a F2 car",
           location: "Frederiksberg",
+          image: 'https://i.imgur.com/kAcIK0J.jpeg',
+
         },
         {
           title: "Gokart",
           text: "Tired of loosing in Gokart? I'll make sure you win the next time. ",
           location: "Nordhavn",
+          image: 'https://i.imgur.com/kAcIK0J.jpeg',
+
         },
         {
           title: "Paraschuting",
           text: "Weekend course in Hellerup. You will after the course be able to jump alone. ",
           location: "Frederiksberg",
+          image: 'https://i.imgur.com/kAcIK0J.jpeg',
+
         },
         {
           title: "Top Gun",
           text: "Offering Flight lessons at Albertslund, You will get to take off, land and do loops",
           location: "Albertslund Golf course",
+          image: 'https://i.imgur.com/kAcIK0J.jpeg',
+
 
         },
         {
           title: "Kiting",
           text: "Offering intro-course to Kiting at Amager Strandpark ",
           location: "Amager",
+          image: 'https://i.imgur.com/kAcIK0J.jpeg',
+
         },
       ]
     }
   }
 
-  _renderItem({ item, index }) {
+  _renderItem({ item, index }, parallaxProps) {
     return (
       <View
-        style={{
-          backgroundColor: 'floralwhite',
-          borderRadius: 5,
-          height: 250,
-          top: "10%",
-          padding: 50,
-          marginLeft: 25,
-          marginRight: 25,
-        }}>
-        <Text style={{ fontSize: 30 }}>{item.title}</Text>
-        <Text>{item.text}</Text>
-        <Text>{item.location}</Text>
+        style={
+          styles.item
+        }>
+        <Text style={{ fontSize: 30, color: "white" }}>{item.title}</Text>
+        <Text style={{ color: "white" }}>{item.text}</Text>
+        <Text style={{ color: "white" }}>{item.location}</Text>
+        <ParallaxImage
+          source={{ uri: item.image }}
+          containerStyle={styles.imageContainer}
+          style={styles.image}
+          parallaxFactor={0.9}
+          {...parallaxProps}
+
+        />
+
 
       </View>
 
@@ -90,16 +106,21 @@ export default class Action extends React.Component {
               layout={"default"}
               ref={ref => this.carousel = ref}
               data={this.state.carouselItems}
-              sliderWidth={300}
-              itemWidth={300}
+              sliderWidth={400}
+              itemWidth={400}
+              itemHeight={1000}
               renderItem={this._renderItem}
-              onSnapToItem={index => this.setState({ activeIndex: index })} />
+              onSnapToItem={index => this.setState({ activeIndex: index })}
+              hasParallaxImages={true}
+            />
           </View>
+          <Modal></Modal>
         </ImageBackground>
       </SafeAreaView>
     );
   }
 }
+const { width: screenWidth } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   root: {
@@ -129,7 +150,28 @@ const styles = StyleSheet.create({
     marginLeft: 100,
     color: "white"
 
-  }
+  },
+  container: {
+    flex: 1,
+  },
+  item: {
+    width: screenWidth - 60,
+    height: screenWidth - 60,
+    backgroundColor: '#21164e',
+    marginLeft: 15,
+    marginTop: 25
+  },
+  imageContainer: {
+    flex: 1,
+    marginBottom: Platform.select({ ios: 0, android: 1 }), // Prevent a random Android rendering issue
+    backgroundColor: 'white',
+    borderRadius: 8,
+  },
+  image: {
+    ...StyleSheet.absoluteFillObject,
+    resizeMode: 'cover',
+  },
+
 
 
 });

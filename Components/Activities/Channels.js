@@ -6,11 +6,11 @@ import {
   TouchableOpacity,
   Text,
   Image,
-  ImageBackground
+  ImageBackground,
+  Button
 } from "react-native";
 import HeaderX from "./HeaderX";
 import CupertinoFooter1 from "./CupertinoFooter1";
-
 import Academics from "./Categories/Academics";
 import Sports from "./Categories/Sports";
 import Handcraft from "./Categories/Handcraft";
@@ -64,7 +64,8 @@ export default class Channels extends React.Component {
               >
                 <View style={styles.button2RowColumn}>
                   <View style={styles.button2Row}>
-                    <TouchableOpacity style={styles.button2}>
+                    <TouchableOpacity style={styles.button2} onPress={() => this.props.navigation.navigate('Sports')}>
+
                       <View style={styles.rect8Filler}></View>
                       <View style={styles.rect8}>
                         <View style={styles.sportsStack}>
@@ -78,7 +79,7 @@ export default class Channels extends React.Component {
                       </View>
                     </TouchableOpacity>
                     <View style={styles.button2Filler}></View>
-                    <TouchableOpacity style={styles.button3}>
+                    <TouchableOpacity style={styles.button3} onPress={() => this.props.navigation.navigate('Handcraft')}>
                       <View style={styles.image40Stack}>
                         <Image
                           source={require("./Images/handcraft.jpg")}
@@ -92,7 +93,7 @@ export default class Channels extends React.Component {
                     </TouchableOpacity>
                   </View>
                   <View style={styles.button4Row}>
-                    <TouchableOpacity style={styles.button4}>
+                    <TouchableOpacity style={styles.button4} onPress={() => this.props.navigation.navigate('Food')}>
                       <ImageBackground
                         source={require("./Images/food.png")}
                         resizeMode="contain"
@@ -106,7 +107,7 @@ export default class Channels extends React.Component {
                       </ImageBackground>
                     </TouchableOpacity>
                     <View style={styles.button4Filler}></View>
-                    <TouchableOpacity style={styles.button5}>
+                    <TouchableOpacity style={styles.button5} onPress={() => this.props.navigation.navigate('Academics')}>
                       <ImageBackground
                         source={require("./Images/books.jpg")}
                         resizeMode="contain"
@@ -123,7 +124,7 @@ export default class Channels extends React.Component {
                 </View>
                 <View style={styles.button2RowColumnFiller}></View>
                 <View style={styles.button7Row}>
-                  <TouchableOpacity style={styles.button7}>
+                  <TouchableOpacity style={styles.button7} onPress={() => this.props.navigation.navigate('Language')}>
                     <ImageBackground
                       source={require("./Images/languages-edited.png")}
                       resizeMode="contain"
@@ -137,7 +138,7 @@ export default class Channels extends React.Component {
                     </ImageBackground>
                   </TouchableOpacity>
                   <View style={styles.button7Filler}></View>
-                  <TouchableOpacity style={styles.button6}>
+                  <TouchableOpacity style={styles.button6} onPress={() => this.props.navigation.navigate('Action')}>
                     <ImageBackground
                       source={require("./Images/fly.jpg")}
                       resizeMode="contain"
