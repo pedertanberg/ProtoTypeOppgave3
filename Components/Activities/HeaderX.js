@@ -18,9 +18,10 @@ function HeaderX(props) {
         <TouchableOpacity /* Conditional navigation not supported at the moment */
           onPress={() => console.log("Navigate to Settings")}
           style={styles.button}
-        >
+              >
           <FeatherIcon
             name={props.icon2Name || "settings"}
+            
             style={styles.icon2}
           ></FeatherIcon>
         </TouchableOpacity>

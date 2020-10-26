@@ -16,8 +16,10 @@ import Channels from "./Components/Activities/Channels";
 import Login from "./Components/Login/Login";
 import Createuser from "./Components/Login/CreateUser";
 import Timeline from "./Components/Activities/Timeline";
-
-
+import Sports from "./Components/Activities/Categories/Sports"
+import { createDrawerNavigator } from "react-navigation-drawer";
+import Calendar from "./Components/Modal/Calendar";
+import HomePage from "./Components/HomePage";
 
 const StackNavigator = createStackNavigator(
   {
@@ -28,10 +30,38 @@ const StackNavigator = createStackNavigator(
     ProfileScreen: { screen: Profile },
     Createuser: {screen: Createuser},
     Login: {screen: Login},
-    Timeline: {screen:Timeline}
+    Timeline: {screen:HomePage}
   },
   { initialRouteKey: "Activity List" }
 );
+
+const MyDrawerNavigator = createDrawerNavigator({
+    Main: {
+        screen: StackNavigator,
+    },
+    Categories: {
+        screen: Channels
+    },
+    ProfileScreen: {
+        screen: ProfileScreen
+    },
+    Timeline: {
+        screen: HomePage
+    },
+    Adduser: {
+        screen: Createuser
+    },
+    Login: {
+        screen: Login
+    },
+    Sports: {
+        screen: Sports
+    },
+    Calendar: {
+      screen: Calendar
+    },
+})
+const AppNav = createAppContainer(MyDrawerNavigator)
 
 const TabNavigator = createBottomTabNavigator({
   Main: {
@@ -122,6 +152,7 @@ export default class App extends React.Component {
     }
   }
   render() {
-    return <AppContainer />;
+      return (<AppNav/>)
+            
   }
 }

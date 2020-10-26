@@ -46,7 +46,7 @@ export default class AddUser extends React.Component {
         name: "",
         email: "",
         password: "",
-        description: "",
+        
       });
     } catch (error) {
       Alert.alert(`Error: ${error.message}`);
@@ -94,7 +94,7 @@ export default class AddUser extends React.Component {
                   <TextInput
                     value={name}
                     onChangeText={this.handleNameChange}
-                    placeholder="Name"
+                    placeholder="name"
                     placeholderTextColor="rgba(255,255,255,1)"
                     secureTextEntry={false}
                     style={styles.nameInput}
@@ -108,7 +108,7 @@ export default class AddUser extends React.Component {
                   <TextInput
                     value={email}
                     onChangeText={this.handleEmailCHange}
-                    placeholder="Email"
+                    placeholder="email"
                     placeholderTextColor="rgba(255,255,255,1)"
                     secureTextEntry={false}
                     style={styles.emailInput}
@@ -121,7 +121,7 @@ export default class AddUser extends React.Component {
                 <TextInput
                   value={password}
                   onChangeText={this.handlePasswordChange}
-                  placeholder="Password"
+                  placeholder="password"
                   placeholderTextColor="rgba(255,255,255,1)"
                   secureTextEntry={true}
                   style={styles.passwordInput}
@@ -133,8 +133,7 @@ export default class AddUser extends React.Component {
           <View style={styles.buttonColumn}>
             <TouchableOpacity
               onPress={this.handleSave}
-              
-              onPress={this.handleEdit} 
+            
             //  onPress={() => props.navigation.navigate("Timeline")}
               style={styles.button}
             >
