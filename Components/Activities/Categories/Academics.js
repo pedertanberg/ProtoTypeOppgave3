@@ -6,7 +6,8 @@ import {
   SafeAreaView,
   ImageBackground,
   StyleSheet,
-  Dimensions
+  Dimensions,
+  Platform
 } from 'react-native';
 import _ from 'lodash';
 import HeaderX from "../HeaderX";
@@ -35,6 +36,8 @@ export default class Academics extends React.Component {
           text: "Have previously teached 2 students, they both received a 12 ",
           location: "Nordhavn",
           image: 'https://i.imgur.com/kAcIK0J.jpeg',
+
+
 
         },
         {

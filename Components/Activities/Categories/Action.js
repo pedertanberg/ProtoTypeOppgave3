@@ -6,7 +6,8 @@ import {
   SafeAreaView,
   ImageBackground,
   StyleSheet,
-  Dimensions
+  Dimensions,
+  Platform
 } from 'react-native';
 import _ from 'lodash';
 import HeaderX from "../HeaderX";

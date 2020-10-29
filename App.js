@@ -79,7 +79,7 @@ const TabNavigator = createBottomTabNavigator({
   Main: {
     screen: StackNavigator,
     navigationOptions: {
-      tabBarLabel: "Activities",
+      tabBarLabel: "Activititties",
       tabBarIcon: ({ tintColor }) => (
         <AntDesign name="user" size={24} color={tintColor} />
       ),
