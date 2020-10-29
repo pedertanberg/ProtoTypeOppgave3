@@ -1,8 +1,8 @@
 {
   "expo": {
-    "name": "prototype",
-    "slug": "prototype",
-    "version": "1.0.0",
+    "name": "ProtoTypeOppgave3",
+    "slug": "ProtoTypeOppgave3",
+    "version": "^39.0.3",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {

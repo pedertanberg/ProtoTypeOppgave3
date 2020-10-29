@@ -22,9 +22,9 @@ import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 
-  
- 
-  
+
+
+
   export default class AddActivity extends React.Component {
     state = {
       price: "",
@@ -32,21 +32,21 @@ import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
       header: "",
       description: "",
     };
-  
+
     handlePriceChange = (text) => this.setState({ price: text });
-  
+
     handleActivityChange = (text) => this.setState({ activity: text });
-  
+
     handleHeaderChange = (text) => this.setState({ header: text });
-  
+
     handleDescriptionChange = (text) => this.setState({ description: text });
-  
+
     handleSave = () => {
       const { price, activity, header, description } = this.state;
       try {
         const reference = firebase
           .database()
-          .ref("/activit/")
+          .ref("/reservations/")
           .push({ price, activity, header, description });
         Alert.alert(`Saved`);
         this.setState({
@@ -62,7 +62,7 @@ import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 
     render() {
         const { price, activity, header, description } = this.state;
-    
+
         return (
             <View style={styles.root}>
             <HeaderX
@@ -78,7 +78,7 @@ import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
           imageStyle={styles.rect2_imageStyle}
           source={require("../Login//luke-chesser-3rWagdKBF7U-unsplash.jpg")}
         >
-          
+
             <Text style={styles.text3}>Create Activity</Text>
             <View style={styles.form}>
               <View style={styles.nameColumn}>
@@ -123,7 +123,7 @@ import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
                     secureTextEntry={false}
                     style={styles.emailInput}
                   ></TextInput>
-                
+
               </View>
               <View style={styles.nameColumnFiller}></View>
               <View style={styles.password}>
@@ -138,11 +138,11 @@ import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
                 ></TextInput>
               </View>
             </View>
-         
+
           <View style={styles.buttonColumn}>
             <TouchableOpacity
               onPress={this.handleSave}
-              
+
             //  onPress={() => props.navigation.navigate("Timeline")}
               style={styles.button}
             >

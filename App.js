@@ -25,6 +25,9 @@ import Handcraft from "./Components/Activities/Categories/Handcraft"
 import { createDrawerNavigator } from "react-navigation-drawer";
 import Calendar from "./Components/Modal/Calendar";
 import HomePage from "./Components/HomePage";
+import SellerProfile from "./Components/SellerProfile"
+import MyReservations from "./Components/MyReservations";
+import MyReservationsDetails from "./Components/MyReservationsDetails";
 
 const StackNavigator = createStackNavigator(
   {
@@ -42,7 +45,9 @@ const StackNavigator = createStackNavigator(
     Action: { screen: Action },
     Handcraft: { screen: Handcraft },
     Language: { screen: Language },
-
+    SellerProfile: {screen: SellerProfile},
+    MyReservations: {screen: MyReservations},
+    MyReservationsDetails: {screen: MyReservationsDetails},
   },
   { initialRouteKey: "Activity List" }
 );
@@ -72,6 +77,15 @@ const MyDrawerNavigator = createDrawerNavigator({
   Calendar: {
     screen: Calendar
   },
+  SellerProfile: {
+    screen: SellerProfile
+  },
+  AddActivity: {
+    screen: AddActivity
+  },
+  MyReservations: {
+    screen: MyReservations
+  },
 })
 const AppNav = createAppContainer(MyDrawerNavigator)
 
@@ -79,7 +93,7 @@ const TabNavigator = createBottomTabNavigator({
   Main: {
     screen: StackNavigator,
     navigationOptions: {
-      tabBarLabel: "Activititties",
+      tabBarLabel: "Activities",
       tabBarIcon: ({ tintColor }) => (
         <AntDesign name="user" size={24} color={tintColor} />
       ),
