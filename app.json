@@ -2,7 +2,7 @@
   "expo": {
     "name": "ProtoTypeOppgave3",
     "slug": "ProtoTypeOppgave3",
-    "version": "^39.0.3",
+    "version": "^1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {

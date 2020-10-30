@@ -46,7 +46,6 @@ const StackNavigator = createStackNavigator(
     Handcraft: { screen: Handcraft },
     Language: { screen: Language },
     SellerProfile: {screen: SellerProfile},
-    MyReservations: {screen: MyReservations},
     MyReservationsDetails: {screen: MyReservationsDetails},
   },
   { initialRouteKey: "Activity List" }
